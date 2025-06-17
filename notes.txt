@@ -1,0 +1,76 @@
+/*
+=====================
+||EXAMPLE USERFLOW ||
+=====================
+
+1. Visit Profile or “Add League” Page
+    Clarke logs into worldfantasyrank.com, clicks on his profile, and selects “Add League”.
+
+2. Select ESPN as Platform
+    A modal or dropdown asks his to pick the fantasy platform. he selects ESPN.
+
+3. Enter Season Year
+  Clarke is prompted to choose the season— he selects 2024.
+
+4. Secure ESPN Login
+    he's redirected to a secure browser popup that opens the ESPN login page.
+
+    he enters his ESPN credentials.
+
+    Once logged in, the site automatically navigates to his ESPN league page behind the scenes.
+
+5. Data Extraction Begins
+    While he watches a “Syncing ESPN...” animation:
+
+    We extract his ESPN cookies (SWID, espn_s2)
+
+    Use them to pull his rosters, teams, scores, matchups, league info via ESPN’s API
+
+6. Confirmation
+    After a few seconds:
+    Clarke sees:
+    “League connected successfully! 2024 - ‘Burrito Brawlers’ loaded.”
+
+    he's now taken to his WFR dashboard where his ESPN league shows up with:
+
+    Weekly matchup history
+
+    Player stats
+
+    Rankings updates
+
+
+===================================================
+|| ESPN League Login System & League Data Access ||
+===================================================
+What It Does Well
+Secure Login via ESPN
+    Users log into their ESPN account one time through a secure browser window. 
+    We never store their password.
+
+Pulls All League Info Automatically
+    After login, we grab all key league data: 
+      matchups, scores, rosters, team names, and standings.
+
+Works Across Past & Current Seasons
+    We can load historical seasons (e.g., 2024) 
+    or pull new data live each week during the season.
+
+No Manual Data Entry Needed
+    Once linked, users don’t need to input league IDs or copy-paste anything.
+==============================
+|| What It Doesn’t Do (Yet) ||
+==============================
+Not a Permanent Link
+    ESPN cookies eventually expire (typically 2–4 weeks), 
+      so users will occasionally need to reconnect their account to keep things synced.
+
+Doesn’t Push to ESPN
+    This setup only reads data from ESPN—it 
+    doesn’t post or modify anything in the user's account.
+
+Not Officially Supported by ESPN
+    While many sites do this, 
+    ESPN could change its systems and break our flow, 
+    so we’re always monitoring for changes.
+*/
